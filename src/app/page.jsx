@@ -320,7 +320,7 @@ export default function Home() {
                   <span className="text-neutral-400 mx-2">-</span>
                   <span className="text-lg text-neutral-300">Music Streaming Platform</span>
                 </div>
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                <a href="https://mudex-music.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
                   View Project <span className="text-lg">→</span>
                 </a>
               </div>
