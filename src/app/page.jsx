@@ -210,6 +210,48 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* Experience Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
+      >
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-6 border-b border-neutral-800 pb-2 transition-all duration-300 hover:text-blue-400"
+        >
+          Experience
+        </motion.h2>
+        <motion.ul 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="space-y-4"
+        >
+          <motion.li 
+            whileHover={{ scale: 1.02 }}
+            className="bg-neutral-900 p-4 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+          >
+            <span className="font-bold">Web Master</span> at <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300">IEEE Student Branch DA-IICT</a>
+            <p className="mt-2 text-neutral-400">
+              Led the development and maintenance of the organization's web presence, implementing full-stack solutions using modern technologies. Managed both frontend and backend development, ensuring seamless user 
+              experience and robust functionality during major events conducted by the organization.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Full Stack Development</span>
+              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Frontend</span>
+              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Backend</span>
+              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Web Maintenance</span>
+            </div>
+          </motion.li>
+        </motion.ul>
+      </motion.section>
+
       {/* Projects Section */}
       <motion.section 
         initial={{ opacity: 0, y: 20 }}
