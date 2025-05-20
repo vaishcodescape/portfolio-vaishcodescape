@@ -235,18 +235,52 @@ export default function Home() {
         >
           <motion.li 
             whileHover={{ scale: 1.02 }}
-            className="bg-neutral-900 p-4 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
           >
-            <span className="font-bold">Web Master</span> at <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300">IEEE Student Branch DA-IICT</a>
-            <p className="mt-2 text-neutral-400">
-              Led the development and maintenance of the organization's web presence, implementing full-stack solutions using modern technologies. Managed both frontend and backend development, ensuring seamless user 
-              experience and robust functionality during major events conducted by the organization.
-            </p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Full Stack Development</span>
-              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Frontend</span>
-              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Backend</span>
-              <span className="text-sm bg-blue-900/50 px-2 py-1 rounded">Web Maintenance</span>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xl font-bold text-blue-400">Web Master</span>
+                  <span className="text-neutral-400 mx-2">@</span>
+                  <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-lg text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300">IEEE Student Branch DA-IICT</a>
+                </div>
+                <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                  View Website <span className="text-lg">→</span>
+                </a>
+              </div>
+              
+              <p className="text-neutral-300 leading-relaxed">
+                Led the development and maintenance of the organization's web presence, implementing full-stack solutions using modern technologies. Managed both frontend and backend development, ensuring seamless user 
+                experience and robust functionality during major events conducted by the organization.
+              </p>
+
+              <div className="mt-2">
+                <span className="text-blue-400 font-medium">Open Source Contributions made:</span>
+                <ul className="mt-2 space-y-2 text-neutral-300">
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">•</span>
+                    <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300">IEEE Student Branch DA-IICT main website</a>
+                    <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="ml-2 px-2 py-1 text-sm bg-blue-900/50 rounded-full hover:bg-blue-800 transition-all duration-300 flex items-center gap-1">
+                      Visit <span className="text-lg">→</span>
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">•</span>
+                    Annual Hackathon Tic Tech Toe
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-400">•</span>
+                    Annual Technical Fest i.FEST
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Full Stack Development</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Frontend</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Backend</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Web Maintenance</span>
+              </div>
             </div>
           </motion.li>
         </motion.ul>
