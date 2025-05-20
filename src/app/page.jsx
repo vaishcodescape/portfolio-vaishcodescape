@@ -311,10 +311,31 @@ export default function Home() {
         >
           <motion.li 
             whileHover={{ scale: 1.02 }}
-            className="bg-neutral-900 p-4 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
           >
-            <span className="font-bold">Project:</span> A Music Streaming Web app called "Mudex Music" for listeners and Artists to upload their music and connect with listeners built with Next.js and Express with a firebase database.
-            <a href="#" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-2">Link to Mudex Music</a>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xl font-bold text-blue-400">Mudex Music</span>
+                  <span className="text-neutral-400 mx-2">-</span>
+                  <span className="text-lg text-neutral-300">Music Streaming Platform</span>
+                </div>
+                <a href="#" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                  View Project <span className="text-lg">→</span>
+                </a>
+              </div>
+              
+              <p className="text-neutral-300 leading-relaxed">
+                A Music Streaming Web app for listeners and Artists to upload their music and connect with listeners. Built with Next.js and Express with a Firebase database.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Next.js</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Express</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Firebase</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Full Stack</span>
+              </div>
+            </div>
           </motion.li>
         </motion.ul>
       </motion.section>
@@ -344,11 +365,36 @@ export default function Home() {
         >
           <motion.li 
             whileHover={{ scale: 1.02 }}
-            className="bg-neutral-900 p-4 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
           >
-            <span className="font-bold">2025:</span> Invited at Indian Institute of Management Ahmedabad for the CTDP conference 2025 as a presenter with my team for our Disability aided A.I model application which could detect dyslexic handwriting and diagnose the user with dyslexia called the D.D App.
-            <a href="https://www.linkedin.com/posts/nktrivedi01_technologyfordisability-dyslexiadetection-activity-7304796254499217409-GrtF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADxn1gQBmAeFLxvBtDdkD5zKAahzZOvkupI" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-2" target="_blank" rel="noopener noreferrer">Link to IIM achievement</a>
-            <a href="/certs/IIM-A cert.jpeg" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-4" target="_blank" rel="noopener noreferrer">View Certificate</a>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xl font-bold text-blue-400">IIM Ahmedabad Presenter</span>
+                  <span className="text-neutral-400 mx-2">-</span>
+                  <span className="text-lg text-neutral-300">2025</span>
+                </div>
+                <div className="flex gap-2">
+                  <a href="https://www.linkedin.com/posts/nktrivedi01_technologyfordisability-dyslexiadetection-activity-7304796254499217409-GrtF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADxn1gQBmAeFLxvBtDdkD5zKAahzZOvkupI" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                    LinkedIn <span className="text-lg">→</span>
+                  </a>
+                  <a href="/certs/IIM-A cert.jpeg" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                    Certificate <span className="text-lg">→</span>
+                  </a>
+                </div>
+              </div>
+              
+              <p className="text-neutral-300 leading-relaxed">
+                Invited at Indian Institute of Management Ahmedabad as a presenter with my team for our Disability aided A.I model application which could detect dyslexic handwriting and diagnose the user with dyslexia called the D.D App.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">AI/ML</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Disability Tech</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Research</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Presentation</span>
+              </div>
+            </div>
           </motion.li>
         </motion.ul>
       </motion.section>
