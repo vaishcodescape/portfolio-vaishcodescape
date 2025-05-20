@@ -272,7 +272,7 @@ export default function Home() {
           >
             <span className="font-bold">2025:</span> Invited at Indian Institute of Management Ahmedabad as a presenter with my team for our Disability aided A.I model application which could detect dyslexic handwriting and diagnose the user with dyslexia called the D.D App.
             <a href="https://www.linkedin.com/posts/nktrivedi01_technologyfordisability-dyslexiadetection-activity-7304796254499217409-GrtF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADxn1gQBmAeFLxvBtDdkD5zKAahzZOvkupI" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-2" target="_blank" rel="noopener noreferrer">Link to IIM achievement</a>
-            <a href="/certs/iim-cert.jpg" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-4" target="_blank" rel="noopener noreferrer">View Certificate</a>
+            <a href="/certs/IIM-A cert.jpeg" className="text-blue-400 hover:underline transition-all duration-300 hover:text-blue-300 ml-4" target="_blank" rel="noopener noreferrer">View Certificate</a>
           </motion.li>
         </motion.ul>
       </motion.section>
