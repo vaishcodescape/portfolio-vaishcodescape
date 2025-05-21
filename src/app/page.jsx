@@ -12,7 +12,8 @@ import {
   SiPython, 
   SiDjango, 
   SiFlask, 
-  SiFastapi 
+  SiFastapi,
+  SiTypescript 
 } from "react-icons/si";
 
 export default function Home() {
@@ -184,6 +185,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 justify-center">
           {[
             { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5" />, hoverClass: 'hover:bg-yellow-500' },
+            { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5" />, hoverClass: 'hover:bg-blue-600' },
             { name: 'MongoDB', icon: <SiMongodb className="w-5 h-5" />, hoverClass: 'hover:bg-green-500' },
             { name: 'Express', icon: <SiExpress className="w-5 h-5" />, hoverClass: 'hover:bg-red-500' },
             { name: 'React', icon: <SiReact className="w-5 h-5" />, hoverClass: 'hover:bg-blue-500' },
