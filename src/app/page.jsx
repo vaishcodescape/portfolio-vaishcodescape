@@ -13,7 +13,10 @@ import {
   SiDjango, 
   SiFlask, 
   SiFastapi,
-  SiTypescript 
+  SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiGit
 } from "react-icons/si";
 
 export default function Home() {
@@ -195,7 +198,10 @@ export default function Home() {
             { name: 'Python', icon: <SiPython className="w-5 h-5" />, hoverClass: 'hover:bg-blue-500' },
             { name: 'Django', icon: <SiDjango className="w-5 h-5" />, hoverClass: 'hover:bg-green-700' },
             { name: 'Flask', icon: <SiFlask className="w-5 h-5" />, hoverClass: 'hover:bg-gray-500' },
-            { name: 'FastAPI', icon: <SiFastapi className="w-5 h-5" />, hoverClass: 'hover:bg-blue-700' }
+            { name: 'FastAPI', icon: <SiFastapi className="w-5 h-5" />, hoverClass: 'hover:bg-blue-700' },
+            { name: 'C', icon: <SiC className="w-5 h-5" />, hoverClass: 'hover:bg-blue-800' },
+            { name: 'C++', icon: <SiCplusplus className="w-5 h-5" />, hoverClass: 'hover:bg-purple-700' },
+            { name: 'Git', icon: <SiGit className="w-5 h-5" />, hoverClass: 'hover:bg-orange-600' }
           ].map((skill, index) => (
             <motion.span
               key={skill.name}
