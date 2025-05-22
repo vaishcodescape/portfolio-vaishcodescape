@@ -317,34 +317,6 @@ export default function Home() {
           transition={{ delay: 0.2 }}
           className="space-y-4"
         >
-          <motion.li 
-            whileHover={{ scale: 1.02 }}
-            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
-          >
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-xl font-bold text-blue-400">Mudex Music</span>
-                  <span className="text-neutral-400 mx-2">-</span>
-                  <span className="text-lg text-neutral-300">Music Streaming Platform</span>
-                </div>
-                <a href="https://mudex-music.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
-                  View Project <span className="text-lg">→</span>
-                </a>
-              </div>
-              
-              <p className="text-neutral-300 leading-relaxed">
-                A Music Streaming Web app for listeners and Artists to upload their music and connect with listeners. Built with Next.js and Express with a Firebase database.
-              </p>
-
-              <div className="flex flex-wrap gap-2 mt-2">
-                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Next.js</span>
-                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Express</span>
-                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">MongoDB</span>
-                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Full Stack</span>
-              </div>
-            </div>
-          </motion.li>
         </motion.ul>
       </motion.section>
 
