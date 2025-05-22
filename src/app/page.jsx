@@ -334,7 +334,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-2 mt-2">
                 <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Next.js</span>
                 <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Express</span>
-                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Firebase</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">MongoDB</span>
                 <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Full Stack</span>
               </div>
             </div>
