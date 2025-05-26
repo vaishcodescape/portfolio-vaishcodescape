@@ -18,6 +18,7 @@ import {
   SiCplusplus,
   SiGit
 } from "react-icons/si";
+import { DiJava } from "react-icons/di";
 
 export default function Home() {
   return (
@@ -201,6 +202,7 @@ export default function Home() {
             { name: 'FastAPI', icon: <SiFastapi className="w-5 h-5" />, hoverClass: 'hover:bg-blue-700' },
             { name: 'C', icon: <SiC className="w-5 h-5" />, hoverClass: 'hover:bg-blue-800' },
             { name: 'C++', icon: <SiCplusplus className="w-5 h-5" />, hoverClass: 'hover:bg-purple-700' },
+            { name: 'Java', icon: <DiJava className="w-5 h-5" />, hoverClass: 'hover:bg-red-700' },
             { name: 'Git', icon: <SiGit className="w-5 h-5" />, hoverClass: 'hover:bg-orange-600' }
           ].map((skill, index) => (
             <motion.span
