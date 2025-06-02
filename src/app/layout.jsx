@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Vaish-Folio",
-  description: "Vaish-Folio",
+  description: "Personal Portfolio",
 };
 
 export default function RootLayout({ children }) {
