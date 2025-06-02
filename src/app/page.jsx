@@ -1,27 +1,28 @@
 "use client"
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
-  SiJavascript, 
-  SiMongodb, 
-  SiExpress, 
-  SiReact, 
-  SiNodedotjs, 
-  SiNextdotjs, 
-  SiTailwindcss, 
-  SiPython, 
-  SiDjango, 
-  SiFlask, 
+import {
+  SiJavascript,
+  SiMongodb,
+  SiExpress,
+  SiReact,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPython,
+  SiDjango,
+  SiFlask,
   SiFastapi,
   SiTypescript,
   SiC,
   SiCplusplus,
   SiGit
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="relative flex flex-col min-h-screen text-neutral-100 overflow-hidden"
@@ -59,7 +60,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -143,7 +144,7 @@ export default function Home() {
             />
           </motion.svg>
         </motion.div>
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -151,7 +152,7 @@ export default function Home() {
         >
           Aditya Vaish
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -159,7 +160,7 @@ export default function Home() {
         >
           Programmer | Developer | Entrepreneur
         </motion.p>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -170,14 +171,14 @@ export default function Home() {
       </motion.section>
 
       {/* Skills Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -189,6 +190,7 @@ export default function Home() {
           {[
             { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5" />, hoverClass: 'hover:bg-yellow-500' },
             { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5" />, hoverClass: 'hover:bg-blue-600' },
+            { name: 'Java', icon: <FaJava className="w-5 h-5" />, hoverClass: 'hover:bg-red-700' },
             { name: 'MongoDB', icon: <SiMongodb className="w-5 h-5" />, hoverClass: 'hover:bg-green-500' },
             { name: 'Express', icon: <SiExpress className="w-5 h-5" />, hoverClass: 'hover:bg-red-500' },
             { name: 'React', icon: <SiReact className="w-5 h-5" />, hoverClass: 'hover:bg-blue-500' },
@@ -219,14 +221,14 @@ export default function Home() {
       </motion.section>
 
       {/* Experience Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -234,14 +236,14 @@ export default function Home() {
         >
           Experience
         </motion.h2>
-        <motion.ul 
+        <motion.ul
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="space-y-4"
         >
-          <motion.li 
+          <motion.li
             whileHover={{ scale: 1.02 }}
             className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
           >
@@ -256,9 +258,9 @@ export default function Home() {
                   View Website <span className="text-lg">→</span>
                 </a>
               </div>
-              
+
               <p className="text-neutral-300 leading-relaxed">
-                Led the development and maintenance of the organization's web presence, implementing full-stack solutions using modern technologies. Managed both frontend and backend development, ensuring seamless user 
+                Led the development and maintenance of the organization's web presence, implementing full-stack solutions using modern technologies. Managed both frontend and backend development, ensuring seamless user
                 experience and robust functionality during major events conducted by the organization.
               </p>
 
@@ -295,14 +297,14 @@ export default function Home() {
       </motion.section>
 
       {/* Projects Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -310,7 +312,7 @@ export default function Home() {
         >
           Projects
         </motion.h2>
-        <motion.ul 
+        <motion.ul
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -321,14 +323,14 @@ export default function Home() {
       </motion.section>
 
       {/* Achievements Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -336,14 +338,14 @@ export default function Home() {
         >
           Achievements
         </motion.h2>
-        <motion.ul 
+        <motion.ul
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="space-y-4"
         >
-          <motion.li 
+          <motion.li
             whileHover={{ scale: 1.02 }}
             className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
           >
@@ -363,7 +365,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              
+
               <p className="text-neutral-300 leading-relaxed">
                 Invited at Indian Institute of Management Ahmedabad as a presenter with my team for our Disability aided A.I model application which could detect dyslexic handwriting and diagnose the user with dyslexia called the D.D App.
               </p>
@@ -380,14 +382,14 @@ export default function Home() {
       </motion.section>
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         className="py-12 px-4 max-w-3xl mx-auto w-full mb-12 transition-all duration-300 hover:scale-105"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -395,7 +397,7 @@ export default function Home() {
         >
           Contact
         </motion.h2>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
