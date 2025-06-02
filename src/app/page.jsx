@@ -17,7 +17,6 @@ import {
   SiCplusplus,
   SiGit
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -189,7 +188,6 @@ export default function Home() {
           {[
             { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5" />, hoverClass: 'hover:bg-yellow-500' },
             { name: 'TypeScript', icon: <SiTypescript className="w-5 h-5" />, hoverClass: 'hover:bg-blue-600' },
-            { name: 'Java', icon: <FaJava className="w-5 h-5" />, hoverClass: 'hover:bg-red-700' },
             { name: 'MongoDB', icon: <SiMongodb className="w-5 h-5" />, hoverClass: 'hover:bg-green-500' },
             { name: 'Express', icon: <SiExpress className="w-5 h-5" />, hoverClass: 'hover:bg-red-500' },
             { name: 'React', icon: <SiReact className="w-5 h-5" />, hoverClass: 'hover:bg-blue-500' },
