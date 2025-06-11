@@ -293,6 +293,85 @@ export default function Home() {
         </motion.ul>
       </motion.section>
 
+      {/* Open Source Contributions Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="py-12 px-4 max-w-3xl mx-auto w-full transition-all duration-300 hover:scale-105"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-semibold mb-6 border-b border-neutral-800 pb-2 transition-all duration-300 hover:text-blue-400"
+        >
+          Open Source Contributions
+        </motion.h2>
+        <motion.ul
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="space-y-4"
+        >
+          <motion.li
+            whileHover={{ scale: 1.02 }}
+            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+          >
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xl font-bold text-blue-400">IEEE Student Branch DA-IICT</span>
+                </div>
+                <a href="https://ieee-dun.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                  View Website <span className="text-lg">→</span>
+                </a>
+              </div>
+
+              <p className="text-neutral-300 leading-relaxed">
+                Contributed to the development of the IEEE Student Branch website, implementing modern web technologies and ensuring a seamless user experience.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Next.js</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">React</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Open Source</span>
+              </div>
+            </div>
+          </motion.li>
+
+          <motion.li
+            whileHover={{ scale: 1.02 }}
+            className="bg-neutral-900 p-6 rounded-lg shadow border border-neutral-800 transition-all duration-300 hover:bg-blue-900 hover:shadow-lg"
+          >
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-xl font-bold text-blue-400">SBG Student Body Government</span>
+                </div>
+                <a href="https://sbg-website-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                  View Website <span className="text-lg">→</span>
+                </a>
+              </div>
+
+              <p className="text-neutral-300 leading-relaxed">
+                Developed and maintained the Student Body Government website, creating an efficient platform for student governance and communication.
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Next.js</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">React</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Tailwind CSS</span>
+                <span className="text-sm bg-blue-900/50 px-3 py-1.5 rounded-full">Open Source</span>
+              </div>
+            </div>
+          </motion.li>
+        </motion.ul>
+      </motion.section>
+
       {/* Projects Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
