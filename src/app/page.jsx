@@ -352,7 +352,7 @@ export default function Home() {
                 <div>
                   <span className="text-xl font-bold text-blue-400">SBG Student Body Government</span>
                 </div>
-                <a href="https://sbg-website-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
+                <a href="https://sbg-website-eta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-all duration-300 flex items-center gap-1">
                   View Website <span className="text-lg">→</span>
                 </a>
               </div>
