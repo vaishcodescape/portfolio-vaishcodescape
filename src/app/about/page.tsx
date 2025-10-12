@@ -14,7 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { Metadata } from "next";
 import { baseURL, about, person, social } from "@/resources";
-import TableOfContents from "@/components/about/TableOfContents";
+import TableOfContents from "@/components/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 

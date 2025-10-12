@@ -1,20 +1,15 @@
-import {
-  DataStyleConfig,
-  DisplayConfig,
-  EffectsConfig,
-  FontsConfig,
-  MailchimpConfig,
-  ProtectedRoutesConfig,
-  RoutesConfig,
-  SameAsConfig,
-  SchemaConfig,
-  SocialSharingConfig,
-  StyleConfig,
-} from "@/types";
-import { home } from "./index";
+import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
+
+type RoutesConfig = Record<string, boolean>;
+type DisplayConfig = {
+  location: boolean;
+  time: boolean;
+  themeSwitcher: boolean;
+};
+type ProtectedRoutesConfig = Record<string, string>;
 
 const routes: RoutesConfig = {
   "/": true,
@@ -58,6 +53,26 @@ const code = Geist_Mono({
   display: "swap",
 });
 
+type FontsConfig = {
+  heading: any;
+  body: any;
+  label: any;
+  code: any;
+};
+
+type StyleConfig = {
+  theme: string;
+  neutral: string;
+  brand: string;
+  accent: string;
+  solid: string;
+  solidStyle: string;
+  border: string;
+  surface: string;
+  transition: string;
+  scaling: string;
+};
+
 const fonts: FontsConfig = {
   heading: heading,
   body: body,
@@ -79,6 +94,14 @@ const style: StyleConfig = {
   scaling: "100", // 90 | 95 | 100 | 105 | 110
 };
 
+type DataStyleConfig = {
+  variant: string;
+  mode: string;
+  height: number;
+  axis: any;
+  tick: any;
+};
+
 const dataStyle: DataStyleConfig = {
   variant: "gradient", // flat | gradient | outline
   mode: "categorical", // categorical | divergent | sequential
@@ -91,6 +114,14 @@ const dataStyle: DataStyleConfig = {
     fontSize: 11,
     line: false,
   },
+};
+
+type EffectsConfig = {
+  mask: any;
+  gradient: any;
+  dots: any;
+  grid: any;
+  lines: any;
 };
 
 const effects: EffectsConfig = {
@@ -132,6 +163,11 @@ const effects: EffectsConfig = {
     thickness: 1,
     angle: 45,
   },
+};
+
+type MailchimpConfig = {
+  action: string;
+  effects: any;
 };
 
 const mailchimp: MailchimpConfig = {
@@ -178,6 +214,14 @@ const mailchimp: MailchimpConfig = {
   },
 };
 
+type SchemaConfig = {
+  logo: string;
+  type: string;
+  name: string;
+  description: string;
+  email: string;
+};
+
 // default schema data
 const schema: SchemaConfig = {
   logo: "",
@@ -187,11 +231,18 @@ const schema: SchemaConfig = {
   email: "lorant@once-ui.com",
 };
 
+type SameAsConfig = Record<string, string>;
+
 // social links
 const sameAs: SameAsConfig = {
   threads: "https://www.threads.com/@once_ui",
   linkedin: "https://www.linkedin.com/company/once-ui/",
   discord: "https://discord.com/invite/5EyAQ4eNdS",
+};
+
+type SocialSharingConfig = {
+  display: boolean;
+  platforms: Record<string, boolean>;
 };
 
 // social sharing configuration for blog posts

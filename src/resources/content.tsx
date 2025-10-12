@@ -14,7 +14,7 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
 
@@ -60,7 +60,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Aditya, a Product Engineer Intern at Superr.AI and Kwezy HQ, where I develop
+      I&apos;m Aditya, a Product Engineer Intern at Superr.AI and Kwezy HQ, where I develop
       <br /> AI-powered solutions and full-stack applications. Currently pursuing B.Tech in ICT.
     </>
   ),
@@ -87,9 +87,9 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm Aditya, a U.S. Green Card holder and currently a Product Engineer Intern at Superr.AI and Kwezy HQ,
-        I'm passionate about building innovative AI-powered solutions and full-stack applications.
-        I'm interested in modern web technologies, AI integration, and scalable system design.
+        I&apos;m Aditya, a U.S. Green Card holder and currently a Product Engineer Intern at Superr.AI and Kwezy HQ,
+        I&apos;m passionate about building innovative AI-powered solutions and full-stack applications.
+        I&apos;m interested in modern web technologies, AI integration, and scalable system design.
       </>
     ),
   },
@@ -331,7 +331,7 @@ const about: About = {
     items: [
       {
         title: "IIM Ahmedabad CTDP 2025 Conference Presentation",
-        description: <>Presented "Dyslexia Detector App" at IIM Ahmedabad's Conference on Technology for Disabled Persons, showcasing innovative accessibility solutions.</>,
+        description: <>Presented &quot;Dyslexia Detector App&quot; at IIM Ahmedabad&apos;s Conference on Technology for Disabled Persons, showcasing innovative accessibility solutions.</>,
         date: "2025",
       },
       {

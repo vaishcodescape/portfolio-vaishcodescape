@@ -1,0 +1,13 @@
+.position {
+  top: 0;
+  padding-top: var(--static-space-8);
+  padding-bottom: var(--static-space-8);
+}
+
+@media (max-width: 768px) {
+  .position {
+    bottom: 0;
+    top: auto;
+  }
+}
+
