@@ -10,12 +10,12 @@ import {
   MorphingDialogClose,
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
-import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
-  BLOG_POSTS,
+  ACHIEVEMENTS,
+  TECH_STACK,
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
@@ -137,8 +137,8 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+            Full stack developer passionate about building scalable  software applications
+            and integrating AI/ML with DevOps. Currently pursuing B.Tech in ICT at DAU.
           </p>
         </div>
       </motion.section>
@@ -166,6 +166,35 @@ export default function Personal() {
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                   {project.description}
                 </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Tech Stack</h3>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {TECH_STACK.map((category, index) => (
+            <div
+              key={index}
+              className="rounded-2xl bg-zinc-50/40 p-4 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50"
+            >
+              <h4 className="mb-3 text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                {category.category}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {category.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
@@ -214,7 +243,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
+        <h3 className="mb-3 text-lg font-medium">Achievements</h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
@@ -225,22 +254,26 @@ export default function Personal() {
               duration: 0.2,
             }}
           >
-            {BLOG_POSTS.map((post) => (
-              <Link
-                key={post.uid}
+            {ACHIEVEMENTS.map((achievement) => (
+              <div
+                key={achievement.uid}
                 className="-mx-3 rounded-xl px-3 py-3"
-                href={post.link}
-                data-id={post.uid}
+                data-id={achievement.uid}
               >
                 <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
+                  <div className="flex items-start justify-between gap-2">
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {achievement.title}
+                    </h4>
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                      {achievement.date}
+                    </span>
+                  </div>
                   <p className="text-zinc-500 dark:text-zinc-400">
-                    {post.description}
+                    {achievement.description}
                   </p>
                 </div>
-              </Link>
+              </div>
             ))}
           </AnimatedBackground>
         </div>
