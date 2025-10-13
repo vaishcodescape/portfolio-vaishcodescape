@@ -10,8 +10,8 @@ export function Header() {
         <Image
           src="/profile_pic.jpeg"
           alt="Aditya Vaish"
-          width={64}
-          height={64}
+          width={128}
+          height={128}
           className="rounded-full ring-2 ring-zinc-200 dark:ring-zinc-800"
           priority
         />
