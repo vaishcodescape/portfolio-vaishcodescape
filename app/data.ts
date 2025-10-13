@@ -81,9 +81,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const ACHIEVEMENTS: Achievement[] = [
   {
-    title: 'Research Presentation at IMRC Conference 2025',
+    title: 'IIM AhmedabadIMRC 2025 Conference Presentation',
     description:
-      'Presented a research model on Perishable Agricultural Commodities focusing on AI-based optimization and sustainability',
+      'Presented a research Machine Learning model on Perishable Agricultural Commodities focusing on AI-based optimization and sustainability',
     date: '2025',
     uid: 'achievement-1',
   },
