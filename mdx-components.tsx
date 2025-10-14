@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
 import { ComponentPropsWithoutRef } from 'react'
+import Image from 'next/image'
 import { highlight } from 'sugar-high'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -16,7 +17,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     }) => {
       return (
         <figure>
-          <img src={src} alt={alt} className="rounded-xl" />
+          <Image 
+            src={src} 
+            alt={alt} 
+            width={800}
+            height={450}
+            className="rounded-xl"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+          />
           <figcaption className="text-center">{caption}</figcaption>
         </figure>
       )

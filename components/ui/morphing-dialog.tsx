@@ -17,6 +17,7 @@ import {
   Variant,
 } from 'motion/react'
 import { createPortal } from 'react-dom'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { XIcon } from 'lucide-react'
 import useClickOutside from '@/hooks/useClickOutside'
@@ -351,6 +352,8 @@ export type MorphingDialogImageProps = {
   alt: string
   className?: string
   style?: React.CSSProperties
+  width?: number
+  height?: number
 }
 
 function MorphingDialogImage({
@@ -358,17 +361,28 @@ function MorphingDialogImage({
   alt,
   className,
   style,
+  width = 800,
+  height = 450,
 }: MorphingDialogImageProps) {
   const { uniqueId } = useMorphingDialog()
 
   return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={cn(className)}
+    <motion.div
       layoutId={`dialog-img-${uniqueId}`}
+      className={cn(className)}
       style={style}
-    />
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full h-full object-cover"
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+      />
+    </motion.div>
   )
 }
 

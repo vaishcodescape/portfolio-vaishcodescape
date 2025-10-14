@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
+import Image from 'next/image'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import {
@@ -64,10 +65,15 @@ function ProjectVideo({ src }: ProjectVideoProps) {
             className="aspect-video w-full cursor-zoom-in rounded-xl"
           />
         ) : (
-          <img
+          <Image
             src={src}
             alt="Project preview"
+            width={800}
+            height={450}
             className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
         )}
       </MorphingDialogTrigger>
@@ -82,10 +88,15 @@ function ProjectVideo({ src }: ProjectVideoProps) {
               className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
             />
           ) : (
-            <img
+            <Image
               src={src}
               alt="Project preview"
+              width={1200}
+              height={675}
               className="aspect-video h-[50vh] w-full rounded-xl object-cover md:h-[70vh]"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
           )}
         </MorphingDialogContent>
