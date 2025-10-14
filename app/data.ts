@@ -38,16 +38,14 @@ export const PROJECTS: Project[] = [
     description:
       'AI-Powered web scraper that intelligently summarizes website content using Groq LLM.',
     link: 'https://github.com/vaishcodescape',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+    video: '/keradon.png',
     id: 'project1',
   },
   {
     name: 'Crypto-Pi',
     description: 'Real-time cryptocurrency price monitoring system with automated alerts.',
     link: 'https://github.com/vaishcodescape',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    video: '/crypto-pi.png',
     id: 'project2',
   },
 ]
