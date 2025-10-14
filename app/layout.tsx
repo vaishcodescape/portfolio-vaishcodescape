@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: 'Aditya Vaish - Software Developer',
     template: '%s | Aditya Vaish'
   },
-  description:  'Software Engineer specializing in full-stack development, AI integration, and scalable web applications.Implementing DevOps practices to build scalable and efficient applications.',
+  description:  'Software Developer specializing in full-stack development, AI integration, and scalable web applications.Implementing DevOps practices to build scalable and efficient applications.',
 };
 
 const geist = Geist({
