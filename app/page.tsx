@@ -138,7 +138,7 @@ export default function Personal() {
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
             Full stack developer passionate about building scalable  software applications
-            and integrating AI/ML with DevOps. Currently pursuing B.Tech in ICT at DAU.
+            and integrating AI/ML with DevOps as well as contributing to open source projects. Currently pursuing B.Tech in ICT at Dhirubhai Ambani University,formerly known as Dhirubhai Ambani Institute of Information and Communication Technology DA-IICT,Gandhinagar.
           </p>
         </div>
       </motion.section>
