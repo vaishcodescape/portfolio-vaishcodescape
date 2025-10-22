@@ -27,7 +27,7 @@ function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  useEffect(() => {
+  useEffect (() => {
     setMounted(true)
   }, [])
 
