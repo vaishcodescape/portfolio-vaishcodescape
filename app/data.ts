@@ -143,7 +143,7 @@ export const TECH_STACK: TechStackCategory[] = [
   {
     category:'A.I/M.L'
     technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API'],
-  }
+  },
   {
     category: 'Databases',
     technologies: ['SQL', 'MongoDB', 'Firebase', 'Supabase'],
