@@ -119,7 +119,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'Phone',
-    link: 'tel:+917248463142',
+    link: 'tel:+91 7248463142',
   },
 ]
 
@@ -140,6 +140,10 @@ export const TECH_STACK: TechStackCategory[] = [
     category: 'DevOps & Cloud',
     technologies: ['Docker', 'Kubernetes', 'Vercel', 'Git', 'GitHub', 'GitLab'],
   },
+  {
+    category:'A.I/M.L'
+    technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API'],
+  }
   {
     category: 'Databases',
     technologies: ['SQL', 'MongoDB', 'Firebase', 'Supabase'],
