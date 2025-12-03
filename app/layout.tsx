@@ -4,7 +4,8 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
-'import { Analytics } from "@vercel/analytics/next"';
+import { LoadingScreen } from '@/components/ui/loading-screen'
+import { FlickeringGrid } from '@/components/ui/flickering-grid'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -49,7 +50,16 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+          <LoadingScreen />
+          <FlickeringGrid
+            className="fixed inset-0 z-0 size-full"
+            squareSize={4}
+            gridGap={6}
+            color="#52525b"
+            maxOpacity={0.3}
+            flickerChance={0.1}
+          />
+          <div className="relative z-10 flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
               <Header />
               {children}
@@ -61,4 +71,3 @@ export default function RootLayout({
     </html>
   )
 }
-

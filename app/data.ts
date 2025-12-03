@@ -130,7 +130,7 @@ export const TECH_STACK: TechStackCategory[] = [
   },
   {
     category: 'Frontend',
-    technologies: ['React.js', 'Next.js', 'React Native', 'Tailwind CSS'],
+    technologies: ['React.js', 'Next.js', 'Tailwind CSS'],
   },
   {
     category: 'Backend',
