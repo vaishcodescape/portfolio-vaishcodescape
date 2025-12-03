@@ -68,7 +68,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work2',
   },
   {
-    company: 'GDG On Campus, DAU',
+    company: 'Google Developer Group (GDG) On Campus, DAU',
     title: 'Core Team Member',
     start: 'Jul 2025',
     end: 'Present',
@@ -141,8 +141,8 @@ export const TECH_STACK: TechStackCategory[] = [
     technologies: ['Docker', 'Kubernetes', 'Vercel', 'Git', 'GitHub', 'GitLab'],
   },
   {
-    category:'A.I/M.L'
-    technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API'],
+    category:'A.I/M.L',
+    technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API', 'Google-Colab'],
   },
   {
     category: 'Databases',
@@ -151,6 +151,10 @@ export const TECH_STACK: TechStackCategory[] = [
   {
     category: 'Core Concepts',
     technologies: ['Data Structures & Algorithms', 'OOP', 'DBMS', 'System Design', 'Computer Networks'],
+  },
+  {
+    category: 'A.I/M.L',
+    technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API', 'Google-Colab'],
   },
 ]
 
