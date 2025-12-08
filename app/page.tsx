@@ -46,7 +46,7 @@ type ProjectVideoProps = {
 
 function ProjectVideo({ src }: ProjectVideoProps) {
   const isVideo = src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov')
-  
+
   return (
     <MorphingDialog
       transition={{
@@ -96,7 +96,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
               className="aspect-video h-[50vh] w-full rounded-xl object-cover md:h-[70vh]"
               loading="lazy"
               placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
           )}
         </MorphingDialogContent>
@@ -166,8 +166,11 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Full stack developer passionate about building scalable  software applications
-            and integrating AI/ML with DevOps as well as contributing to open source projects. Currently pursuing B.Tech in ICT at Dhirubhai Ambani University,formerly known as Dhirubhai Ambani Institute of Information and Communication Technology DA-IICT,Gandhinagar.
+            Hi, I'm Aditya. I'm a Full Stack Developer passionate about building scalable software 
+            and integrating AI/ML with DevOps. 
+            Currently pursuing my undergrad in ICT at Dhirubhai Ambani University (formerly DA-IICT), 
+            I love contributing to open source and tinkering with new technologies. I'm always looking for new challenges, 
+            especially in building SaaS products with the potential to create a lasting impact.
           </p>
         </div>
       </motion.section>
