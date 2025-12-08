@@ -138,7 +138,7 @@ export const TECH_STACK: TechStackCategory[] = [
   },
   {
     category: 'DevOps & Cloud',
-    technologies: ['Docker', 'Kubernetes', 'Vercel', 'Git', 'GitHub', 'GitLab'],
+    technologies: ['AWS', 'Docker', 'Kubernetes', 'Vercel', 'Git', 'GitHub', 'GitLab'],
   },
   {
     category:'A.I/M.L',
