@@ -152,10 +152,6 @@ export const TECH_STACK: TechStackCategory[] = [
     category: 'Core Concepts',
     technologies: ['Data Structures & Algorithms', 'OOP', 'DBMS', 'System Design', 'Computer Networks'],
   },
-  {
-    category: 'A.I/M.L',
-    technologies: ['Hugging Face Transformers','LangGraph','Langchain','LlamaIndex','LLM API', 'Google-Colab'],
-  },
 ]
 
 export const EMAIL = 'adityavaish846@gmail.com'
