@@ -4,6 +4,9 @@ type Project = {
   link: string
   video: string
   id: string
+  tags?: string[]
+  year?: string
+  github?: string
 }
 
 type WorkExperience = {
@@ -34,19 +37,46 @@ type TechStackCategory = {
 
 export const PROJECTS: Project[] = [
   {
+    name: 'OSC Lit',
+    description:
+      'A platform where developers can easily discover and contribute to open source repositories. Simplifies the process of finding the right projects to contribute to.',
+    link: 'https://osc-lit.vercel.app',
+    github: 'https://github.com/vaishcodescape/OSC-Lit',
+    video: '/osc-lit.png',
+    id: 'project1',
+    tags: ['Next.js', 'Open Source', 'TypeScript', 'Web Platform'],
+    year: '2025',
+  },
+  {
     name: 'Keradon',
     description:
       'AI-Powered web scraper that intelligently summarizes website content using Groq LLM.',
-    link: 'https://github.com/vaishcodescape',
+    link: 'https://github.com/vaishcodescape/Keradon-App',
+    github: 'https://github.com/vaishcodescape/Keradon-App',
     video: '/keradon.png',
-    id: 'project1',
+    id: 'project2',
+    tags: ['AI/ML', 'Web Scraping', 'Groq LLM', 'Python'],
+    year: '2025',
   },
   {
     name: 'Crypto-Pi',
     description: 'Real-time cryptocurrency price monitoring system with automated alerts.',
-    link: 'https://github.com/vaishcodescape',
+    link: 'https://github.com/vaishcodescape/Crypto-Pi',
+    github: 'https://github.com/vaishcodescape/Crypto-Pi',
     video: '/crypto-pi.png',
-    id: 'project2',
+    id: 'project3',
+    tags: ['Real-time', 'Cryptocurrency', 'Python', 'API'],
+    year: '2024',
+  },
+  {
+    name: 'OptiCom',
+    description: 'Fast multi-client communication server built with C++ sockets and multi-threading for efficient concurrent connections.',
+    link: 'https://github.com/vaishcodescape/Opticom',
+    github: 'https://github.com/vaishcodescape/Opticom',
+    video: '/opticom.png',
+    id: 'project4',
+    tags: ['C++', 'Sockets', 'Multi-threading', 'Network Programming'],
+    year: '2024',
   },
 ]
 
@@ -55,14 +85,14 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     company: 'Superr.AI',
     title: 'Product Engineer Intern',
     start: 'Aug 2025',
-    end: 'Present',
+    end: 'Oct 2025',
     link: 'https://superr.ai',
     id: 'work1',
   },
   {
     company: 'Kwezy HQ',
     title: 'Product Engineer Intern',
-    start: 'Aug 2025',
+    start: 'Oct 2025',
     end: 'Present',
     link: 'https://kwezy.com',
     id: 'work2',
