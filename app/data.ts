@@ -2,10 +2,8 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
   id: string
   tags?: string[]
-  year?: string
   github?: string
 }
 
@@ -42,10 +40,9 @@ export const PROJECTS: Project[] = [
       'A platform where developers can easily discover and contribute to open source repositories. Simplifies the process of finding the right projects to contribute to.',
     link: 'https://osc-lit.vercel.app',
     github: 'https://github.com/vaishcodescape/OSC-Lit',
-    video: '/osc-lit.png',
     id: 'project1',
     tags: ['Next.js', 'Open Source', 'TypeScript', 'Web Platform'],
-    year: '2025',
+  
   },
   {
     name: 'Keradon',
@@ -53,30 +50,26 @@ export const PROJECTS: Project[] = [
       'AI-Powered web scraper that intelligently summarizes website content using Groq LLM.',
     link: 'https://github.com/vaishcodescape/Keradon-App',
     github: 'https://github.com/vaishcodescape/Keradon-App',
-    video: '/keradon.png',
     id: 'project2',
     tags: ['AI/ML', 'Web Scraping', 'Groq LLM', 'Python'],
-    year: '2025',
+ 
   },
   {
-    name: 'Crypto-Pi',
-    description: 'Real-time cryptocurrency price monitoring system with automated alerts.',
-    link: 'https://github.com/vaishcodescape/Crypto-Pi',
-    github: 'https://github.com/vaishcodescape/Crypto-Pi',
-    video: '/crypto-pi.png',
+    name: 'Airops.ai',
+    description: 'Prompt based agentic A.I agent to automate desktop workflows',
+    link: 'https://github.com/vaishcodescape/airops.ai.git',
+    github: 'https://github.com/vaishcodescape/airops.ai.git',
     id: 'project3',
-    tags: ['Real-time', 'Cryptocurrency', 'Python', 'API'],
-    year: '2024',
+    tags: ['Agentic A.I', 'Langchain', 'Python', 'FastAPI', 'Hugging Face'],
+
   },
   {
-    name: 'OptiCom',
+    name: 'Opticom',
     description: 'Fast multi-client communication server built with C++ sockets and multi-threading for efficient concurrent connections.',
     link: 'https://github.com/vaishcodescape/Opticom',
     github: 'https://github.com/vaishcodescape/Opticom',
-    video: '/opticom.png',
     id: 'project4',
     tags: ['C++', 'Sockets', 'Multi-threading', 'Network Programming'],
-    year: '2024',
   },
 ]
 
@@ -92,8 +85,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Kwezy HQ',
     title: 'Product Engineer Intern',
-    start: 'Oct 2025',
-    end: 'Present',
+    start: 'Aug 2025',
+    end: 'Oct 2025',
     link: 'https://kwezy.com',
     id: 'work2',
   },
@@ -185,4 +178,3 @@ export const TECH_STACK: TechStackCategory[] = [
 ]
 
 export const EMAIL = 'adityavaish846@gmail.com'
-
