@@ -35,11 +35,11 @@ type TechStackCategory = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'OSC Lit',
+    name: 'Devolution Official Website',
     description:
-      'A platform where developers can easily discover and contribute to open source repositories. Simplifies the process of finding the right projects to contribute to.',
-    link: 'https://osc-lit.vercel.app',
-    github: 'https://github.com/vaishcodescape/OSC-Lit',
+      'Official website of Devolution, a community of developers and tech enthusiasts.',
+    link: 'https://devolution.dscdaiict.in',
+    github: 'https://github.com/gdg-da/Dev-o-lution-26.git',
     id: 'project1',
     tags: ['Next.js', 'Open Source', 'TypeScript', 'Web Platform'],
   
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
  
   },
   {
-    name: 'Airops.ai',
+    name: 'AiroOps.ai',
     description: 'Prompt based agentic A.I agent to automate desktop workflows',
     link: 'https://github.com/vaishcodescape/airops.ai.git',
     github: 'https://github.com/vaishcodescape/airops.ai.git',
