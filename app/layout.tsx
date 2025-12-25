@@ -1,37 +1,40 @@
-import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
-import { Header } from './header'
-import { Footer } from './footer'
-import { ThemeProvider } from 'next-themes'
-import { LoadingScreen } from '@/components/ui/loading-screen'
-import { FlickeringGrid } from '@/components/ui/flickering-grid'
+import type React from "react"
+import type { Metadata, Viewport } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import "./globals.css"
+import { Header } from "./header"
+import { Footer } from "./footer"
+import { ThemeProvider } from "next-themes"
+import { SmoothScroll } from "@/components/smooth-scroll"
+
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  themeColor: '#ffffff',
+  themeColor: "#2d3748",
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vaishcodescape.vercel.app/'),
+  metadataBase: new URL("https://vaishcodescape.vercel.app/"),
   alternates: {
-    canonical: '/'
+    canonical: "/",
   },
   title: {
-    default: 'Aditya Vaish - Software Developer',
-    template: '%s | Aditya Vaish'
+    default: "Aditya Vaish - Software Developer",
+    template: "%s | Aditya Vaish",
   },
-  description:  'Software Developer specializing in full-stack development, AI integration, and scalable web applications.Implementing DevOps practices to build scalable and efficient applications.',
-};
+  description:
+    "Software Developer specializing in full-stack development, AI integration, and scalable web applications. Implementing DevOps practices to build scalable and efficient applications.",
+    generator: 'v0.app'
+}
 
 const geist = Geist({
-  variable: '--font-geist',
-  subsets: ['latin'],
+  variable: "--font-geist",
+  subsets: ["latin"],
 })
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 })
 
 export default function RootLayout({
@@ -42,30 +45,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+        className={`${geist.variable} ${geistMono.variable} font-sans bg-background text-foreground tracking-tight antialiased`}
       >
-        <ThemeProvider
-          enableSystem={true}
-          attribute="class"
-          storageKey="theme"
-          defaultTheme="system"
-        >
-          <LoadingScreen />
-          <FlickeringGrid
-            className="fixed inset-0 z-0 size-full"
-            squareSize={4}
-            gridGap={6}
-            color="#52525b"
-            maxOpacity={0.3}
-            flickerChance={0.1}
-          />
-          <div className="relative z-10 flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-              <Header />
-              {children}
-              <Footer />
+        <ThemeProvider enableSystem={true} attribute="class" storageKey="theme" defaultTheme="dark">
+          <SmoothScroll>
+            <div className="relative min-h-screen w-full">
+              <div className="relative mx-auto w-full max-w-3xl px-6 py-16 md:py-24">
+                <Header />
+                {children}
+                <Footer />
+              </div>
             </div>
-          </div>
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

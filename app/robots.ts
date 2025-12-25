@@ -11,4 +11,3 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${WEBSITE_URL}/sitemap.xml`,
   }
 }
-
