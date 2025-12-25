@@ -1,84 +1,516 @@
 "use client"
-import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
 import { PROJECTS, WORK_EXPERIENCE, ACHIEVEMENTS, TECH_STACK, EMAIL, SOCIAL_LINKS } from "./data"
 import Image from "next/image"
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
 }
 
 export default function Home() {
+  const mainRef = useRef<HTMLElement>(null)
+  
+  // Hero Section Refs
+  const heroRef = useRef<HTMLElement>(null)
+  const heroTitleRef = useRef<HTMLParagraphElement>(null)
+  const heroHeadingRef = useRef<HTMLHeadingElement>(null)
+  const heroDescriptionRef = useRef<HTMLParagraphElement>(null)
+  const heroImageRef = useRef<HTMLDivElement>(null)
+  const heroCTARef = useRef<HTMLDivElement>(null)
+
+  // About Section Refs
+  const aboutRef = useRef<HTMLElement>(null)
+  const aboutContentRef = useRef<HTMLDivElement>(null)
+
+  // Experience Section Refs
+  const experienceRef = useRef<HTMLElement>(null)
+  const experienceItemsRef = useRef<HTMLElement[]>([])
+
+  // Projects Section Refs
+  const projectsRef = useRef<HTMLElement>(null)
+  const projectCardsRef = useRef<HTMLElement[]>([])
+
+  // Tech Stack Section Refs
+  const techStackRef = useRef<HTMLElement>(null)
+  const techCategoriesRef = useRef<HTMLElement[]>([])
+
+  // Achievements Section Refs
+  const achievementsRef = useRef<HTMLElement>(null)
+  const achievementItemsRef = useRef<HTMLElement[]>([])
+
+  // Contact Section Refs
+  const contactRef = useRef<HTMLElement>(null)
+  const contactLinksRef = useRef<HTMLElement[]>([])
+  const resumeButtonRef = useRef<HTMLAnchorElement>(null)
+
+  useEffect(() => {
+    // Wait for ScrollSmoother to be ready
+    const initAnimations = () => {
+      // Refresh ScrollTrigger to ensure proper calculations with ScrollSmoother
+      ScrollTrigger.refresh()
+
+      // Hero Section Animation - Staggered Text Reveal
+      const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } })
+      
+      if (heroTitleRef.current) {
+        gsap.set(heroTitleRef.current, { opacity: 0, y: 20 })
+        heroTl.to(heroTitleRef.current, { opacity: 1, y: 0, duration: 0.6 })
+      }
+
+      if (heroHeadingRef.current) {
+        // Split heading into words for character reveal
+        const words = heroHeadingRef.current.textContent?.split(" ") || []
+        heroHeadingRef.current.innerHTML = words
+          .map((word, i) => `<span style="display: inline-block; opacity: 0; transform: translateY(20px);" data-word="${i}">${word}</span>`)
+          .join(" ")
+
+        const wordSpans = heroHeadingRef.current.querySelectorAll("span")
+        gsap.to(wordSpans, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.08,
+          delay: 0.3,
+          ease: "power2.out",
+        })
+      }
+
+      if (heroImageRef.current) {
+        gsap.set(heroImageRef.current, { opacity: 0, scale: 0.8 })
+        heroTl.to(heroImageRef.current, { opacity: 1, scale: 1, duration: 0.7 }, "-=0.4")
+      }
+
+      if (heroDescriptionRef.current) {
+        gsap.set(heroDescriptionRef.current, { opacity: 0, y: 20 })
+        heroTl.to(heroDescriptionRef.current, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      }
+
+      // Parallax effect on scroll for hero - gentler parallax
+      if (heroRef.current) {
+        ScrollTrigger.create({
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (heroHeadingRef.current) {
+              const progress = self.progress
+              gsap.set(heroHeadingRef.current, {
+                y: progress * 20,
+                opacity: Math.max(0.7, 1 - progress * 0.2),
+              })
+            }
+          },
+        })
+      }
+
+      // About Section - Smooth slide-up with better intersection
+      if (aboutRef.current && aboutContentRef.current) {
+        gsap.set(aboutContentRef.current, { opacity: 0, y: 50 })
+        ScrollTrigger.create({
+          trigger: aboutRef.current,
+          start: "top 75%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+          animation: gsap.to(aboutContentRef.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          }),
+        })
+      }
+
+      // Experience Section - Staggered Scroll Reveal with smooth intersection
+      experienceItemsRef.current.forEach((item, index) => {
+        if (item) {
+          gsap.set(item, { opacity: 0, x: -40 })
+          
+          ScrollTrigger.create({
+            trigger: item,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+            animation: gsap.to(item, {
+              opacity: 1,
+              x: 0,
+              duration: 0.7,
+              delay: index * 0.08,
+              ease: "power2.out",
+            }),
+          })
+
+          // Hover animation for experience items
+          const handleMouseEnter = () => {
+            gsap.to(item, {
+              x: 5,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+          const handleMouseLeave = () => {
+            gsap.to(item, {
+              x: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+          
+          item.addEventListener("mouseenter", handleMouseEnter)
+          item.addEventListener("mouseleave", handleMouseLeave)
+        }
+      })
+
+      // Projects Section - Staggered Card Reveals with better intersection
+      projectCardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.set(card, { opacity: 0, y: 60, scale: 0.92 })
+          
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top 82%",
+            end: "top 45%",
+            toggleActions: "play none none reverse",
+            animation: gsap.to(card, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.7,
+              delay: index * 0.08,
+              ease: "power3.out",
+            }),
+          })
+
+          // Hover lift effect
+          const cardLink = card.querySelector("a")
+          if (cardLink) {
+            const handleMouseEnter = () => {
+              gsap.to(card, {
+                y: -10,
+                scale: 1.02,
+                duration: 0.4,
+                ease: "power2.out",
+              })
+            }
+            const handleMouseLeave = () => {
+              gsap.to(card, {
+                y: 0,
+                scale: 1,
+                duration: 0.4,
+                ease: "power2.out",
+              })
+            }
+            
+            cardLink.addEventListener("mouseenter", handleMouseEnter)
+            cardLink.addEventListener("mouseleave", handleMouseLeave)
+          }
+        }
+      })
+
+      // Tech Stack Section - Timeline-based Entrance with smooth reveal
+      if (techStackRef.current && techCategoriesRef.current.length > 0) {
+        const techTl = gsap.timeline({ paused: true })
+        
+        techCategoriesRef.current.forEach((category, index) => {
+          if (category) {
+            gsap.set(category, { opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 20 })
+            techTl.to(
+              category,
+              {
+                opacity: 1,
+                x: 0,
+                y: 0,
+                duration: 0.7,
+                ease: "power3.out",
+              },
+              index * 0.1
+            )
+          }
+        })
+
+        ScrollTrigger.create({
+          trigger: techStackRef.current,
+          start: "top 75%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+          animation: techTl,
+        })
+      }
+
+      // Achievements Section - Smooth scroll-triggered Animation
+      achievementItemsRef.current.forEach((item, index) => {
+        if (item) {
+          gsap.set(item, { opacity: 0, x: -40 })
+          
+          ScrollTrigger.create({
+            trigger: item,
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+            animation: gsap.to(item, {
+              opacity: 1,
+              x: 0,
+              duration: 0.6,
+              delay: index * 0.06,
+              ease: "power2.out",
+            }),
+          })
+
+          // Border animation on hover
+          const handleMouseEnter = () => {
+            gsap.to(item, {
+              borderLeftWidth: "4px",
+              x: 4,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+          const handleMouseLeave = () => {
+            gsap.to(item, {
+              borderLeftWidth: "2px",
+              x: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+          
+          item.addEventListener("mouseenter", handleMouseEnter)
+          item.addEventListener("mouseleave", handleMouseLeave)
+        }
+      })
+
+      // Contact Section - Micro-interactions with smooth reveal
+      contactLinksRef.current.forEach((link, index) => {
+        if (link) {
+          gsap.set(link, { opacity: 0, y: 30, scale: 0.9 })
+          
+          ScrollTrigger.create({
+            trigger: link,
+            start: "top 85%",
+            end: "top 55%",
+            toggleActions: "play none none reverse",
+            animation: gsap.to(link, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: "back.out(1.3)",
+            }),
+          })
+
+          // Hover micro-interactions
+          const handleMouseEnter = () => {
+            gsap.to(link, {
+              scale: 1.05,
+              y: -3,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+            const icon = link.querySelector("svg")
+            if (icon) {
+              gsap.to(icon, {
+                x: 3,
+                y: -3,
+                duration: 0.3,
+                ease: "power2.out",
+              })
+            }
+          }
+          const handleMouseLeave = () => {
+            gsap.to(link, {
+              scale: 1,
+              y: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+            const icon = link.querySelector("svg")
+            if (icon) {
+              gsap.to(icon, {
+                x: 0,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out",
+              })
+            }
+          }
+          
+          link.addEventListener("mouseenter", handleMouseEnter)
+          link.addEventListener("mouseleave", handleMouseLeave)
+        }
+      })
+
+      // Resume Button Animation with smooth reveal
+      if (resumeButtonRef.current) {
+        gsap.set(resumeButtonRef.current, { opacity: 0, scale: 0.85, y: 20 })
+        
+        ScrollTrigger.create({
+          trigger: resumeButtonRef.current,
+          start: "top 85%",
+          end: "top 60%",
+          toggleActions: "play none none reverse",
+          animation: gsap.to(resumeButtonRef.current, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+          }),
+        })
+
+        const button = resumeButtonRef.current
+        const handleMouseEnter = () => {
+          gsap.to(button, {
+            scale: 1.05,
+            y: -3,
+            boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
+            duration: 0.3,
+            ease: "power2.out",
+          })
+          const icon = button.querySelector("svg")
+          if (icon) {
+            gsap.to(icon, {
+              x: 3,
+              y: -3,
+              rotation: 5,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+        }
+        const handleMouseLeave = () => {
+          gsap.to(button, {
+            scale: 1,
+            y: 0,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+            duration: 0.3,
+            ease: "power2.out",
+          })
+          const icon = button.querySelector("svg")
+          if (icon) {
+            gsap.to(icon, {
+              x: 0,
+              y: 0,
+              rotation: 0,
+              duration: 0.3,
+              ease: "power2.out",
+            })
+          }
+        }
+        
+        button.addEventListener("mouseenter", handleMouseEnter)
+        button.addEventListener("mouseleave", handleMouseLeave)
+      }
+    }
+
+    // Small delay to ensure DOM is ready and ScrollSmoother is initialized
+    const timeoutId = setTimeout(() => {
+      initAnimations()
+      // Refresh on resize
+      const handleResize = () => {
+        ScrollTrigger.refresh()
+      }
+      window.addEventListener("resize", handleResize)
+      
+      return () => {
+        window.removeEventListener("resize", handleResize)
+      }
+    }, 100)
+
+    return () => {
+      clearTimeout(timeoutId)
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    }
+  }, [])
+
   return (
-    <motion.main variants={container} initial="hidden" animate="show" className="space-y-24">
+    <main ref={mainRef} className="space-y-24">
       {/* Hero Section */}
-      <motion.section variants={item} className="space-y-6">
+      <section ref={heroRef} className="space-y-6">
         <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-4 flex-1">
-            <p className="text-sm uppercase tracking-wider text-muted-foreground">Full Stack Developer</p>
-            <h2 className="text-4xl font-medium leading-tight tracking-tight text-foreground md:text-5xl">
+            <p
+              ref={heroTitleRef}
+              className="text-sm uppercase tracking-wider text-muted-foreground"
+            >
+              Full Stack Developer
+            </p>
+            <h2
+              ref={heroHeadingRef}
+              className="text-4xl font-medium leading-tight tracking-tight text-foreground md:text-5xl"
+            >
               Building polished software and web experiences.
             </h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
+          <div
+            ref={heroImageRef}
             className="relative h-32 w-32 shrink-0 md:h-40 md:w-40"
           >
             <div className="relative h-full w-full overflow-hidden rounded-full border-2 border-border">
-              <Image src="/profile_pic.jpeg" alt="Aditya Vaishampayan" fill className="object-cover" priority />
+              <Image
+                src="/profile_pic.jpeg"
+                alt="Aditya Vaishampayan"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-          </motion.div>
+          </div>
         </div>
-        <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          I'm a Full Stack Developer passionate about building scalable software and integrating AI/ML with DevOps.
-          Currently pursuing my undergrad in ICT at Dhirubhai Ambani University, I love contributing to open source and
-          tinkering with new technologies.
+        <p
+          ref={heroDescriptionRef}
+          className="max-w-2xl text-lg leading-relaxed text-muted-foreground"
+        >
+          I&apos;m a Full Stack Developer passionate about building scalable software
+          and integrating AI/ML with DevOps. Currently pursuing my undergrad in ICT at
+          Dhirubhai Ambani University, I love contributing to open source and tinkering
+          with new technologies.
         </p>
-      </motion.section>
+      </section>
 
       {/* About Section */}
-      <motion.section variants={item} className="space-y-6">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">About</h3>
-        <div className="space-y-4 text-base leading-relaxed text-foreground">
+      <section ref={aboutRef} className="space-y-6">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          About
+        </h3>
+        <div
+          ref={aboutContentRef}
+          className="space-y-4 text-base leading-relaxed text-foreground"
+        >
           <p>
-            I'm always looking for new challenges, especially in building SaaS products with the potential to create a
-            lasting impact. My work spans full-stack development, cloud infrastructure, and machine learning
+            I&apos;m always looking for new challenges, especially in building SaaS
+            products with the potential to create a lasting impact. My work spans
+            full-stack development, cloud infrastructure, and machine learning
             integration.
           </p>
           <p>
-            In the past, I've had the opportunity to develop software across a variety of settings — from advertising
-            agencies and large corporations to start-ups and small digital product studios.
+            In the past, I&apos;ve had the opportunity to develop software across a
+            variety of settings — from advertising agencies and large corporations to
+            start-ups and small digital product studios.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Experience Section */}
-      <motion.section variants={item} className="space-y-8">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">Experience</h3>
+      <section ref={experienceRef} className="space-y-8">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          Experience
+        </h3>
         <div className="space-y-12">
           {WORK_EXPERIENCE.map((job, index) => (
-            <motion.a
+            <a
               key={job.id}
+              ref={(el) => {
+                if (el) experienceItemsRef.current[index] = el
+              }}
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
             >
               <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                 <div className="space-y-1">
@@ -94,22 +526,24 @@ export default function Home() {
                   {job.start} — {job.end}
                 </p>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Projects Section */}
-      <motion.section variants={item} className="space-y-8">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">Projects</h3>
+      <section ref={projectsRef} className="space-y-8">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          Projects
+        </h3>
         <div className="grid gap-6 md:grid-cols-2 md:auto-rows-fr">
           {PROJECTS.map((project, index) => (
-            <motion.div
+            <div
               key={project.name}
+              ref={(el) => {
+                if (el) projectCardsRef.current[index] = el
+              }}
               className="group relative h-full"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
             >
               <a
                 href={project.link}
@@ -123,7 +557,9 @@ export default function Home() {
                   </h4>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent" />
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground flex-grow">{project.description}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground grow">
+                  {project.description}
+                </p>
                 {project.tags && project.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -137,61 +573,76 @@ export default function Home() {
                   </div>
                 )}
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Tech Stack Section */}
-      <motion.section variants={item} className="space-y-8">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">Tech Stack</h3>
+      <section ref={techStackRef} className="space-y-8">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          Tech Stack
+        </h3>
         <div className="grid gap-8 md:grid-cols-2 md:auto-rows-fr">
           {TECH_STACK.map((category, index) => (
-            <motion.div
+            <div
               key={category.category}
+              ref={(el) => {
+                if (el) techCategoriesRef.current[index] = el
+              }}
               className="space-y-3"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
             >
-              <h4 className="text-sm font-medium text-foreground">{category.category}</h4>
+              <h4 className="text-sm font-medium text-foreground">
+                {category.category}
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {category.technologies.map((tech) => (
-                  <span key={tech} className="rounded-md bg-secondary px-3 py-1.5 text-sm text-secondary-foreground">
+                  <span
+                    key={tech}
+                    className="rounded-md bg-secondary px-3 py-1.5 text-sm text-secondary-foreground"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Achievements Section */}
-      <motion.section variants={item} className="space-y-8">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">Achievements</h3>
+      <section ref={achievementsRef} className="space-y-8">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          Achievements
+        </h3>
         <div className="space-y-6">
           {ACHIEVEMENTS.map((achievement, index) => (
-            <motion.div
+            <div
               key={achievement.uid}
+              ref={(el) => {
+                if (el) achievementItemsRef.current[index] = el
+              }}
               className="space-y-2 border-l-2 border-border pl-4 transition-colors hover:border-accent"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.05 }}
             >
               <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
                 <h4 className="font-medium text-foreground">{achievement.title}</h4>
-                <span className="text-sm text-muted-foreground whitespace-nowrap">{achievement.date}</span>
+                <span className="text-sm text-muted-foreground whitespace-nowrap">
+                  {achievement.date}
+                </span>
               </div>
-              <p className="text-sm text-muted-foreground">{achievement.description}</p>
-            </motion.div>
+              <p className="text-sm text-muted-foreground">
+                {achievement.description}
+              </p>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Contact Section */}
-      <motion.section variants={item} className="space-y-8">
-        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">Connect</h3>
+      <section ref={contactRef} className="space-y-8">
+        <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
+          Connect
+        </h3>
         <div className="space-y-6">
           <p className="text-base text-foreground">
             Feel free to contact me at{" "}
@@ -203,9 +654,12 @@ export default function Home() {
             </a>
           </p>
           <div className="flex flex-wrap gap-3">
-            {SOCIAL_LINKS.map((link) => (
+            {SOCIAL_LINKS.map((link, index) => (
               <a
                 key={link.label}
+                ref={(el) => {
+                  if (el) contactLinksRef.current[index] = el
+                }}
                 href={link.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -217,20 +671,21 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Resume Download */}
-      <motion.section variants={item} className="flex justify-center pb-12">
+      <section className="flex justify-center pb-12">
         <a
+          ref={resumeButtonRef}
           href="/resume/Aditya_US_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-medium text-accent-foreground shadow-lg transition-all hover:shadow-xl hover:scale-105"
+          className="group inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 text-base font-medium text-accent-foreground shadow-lg transition-all hover:shadow-xl"
         >
           Download Resume
           <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
-      </motion.section>
-    </motion.main>
+      </section>
+    </main>
   )
 }
