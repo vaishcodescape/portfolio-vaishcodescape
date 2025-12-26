@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
  
   },
   {
-    name: 'AiroOps.ai',
+    name: 'AirOps.ai',
     description: 'Prompt based agentic A.I agent to automate desktop workflows',
     link: 'https://github.com/vaishcodescape/airops.ai.git',
     github: 'https://github.com/vaishcodescape/airops.ai.git',
