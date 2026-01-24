@@ -75,12 +75,21 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
+
+    company:'Datacurve.ai YC 24',
+    title:'OSS Code Eval Team',
+    start:'Jan 2026',
+    end:'Present',
+    link:'https://datacurve.ai',
+    id:'work1',
+  },
+  {
     company: 'Superr.AI',
     title: 'Product Engineer Intern',
     start: 'Aug 2025',
     end: 'Oct 2025',
     link: 'https://superr.ai',
-    id: 'work1',
+    id: 'work2',
   },
   {
     company: 'Kwezy HQ',
@@ -88,7 +97,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: 'Aug 2025',
     end: 'Oct 2025',
     link: 'https://kwezy.com',
-    id: 'work2',
+    id: 'work3',
   },
   {
     company: 'Google Developer Group (GDG) On Campus, DAU',
@@ -96,7 +105,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: 'Jul 2025',
     end: 'Present',
     link: 'https://gdg.community.dev',
-    id: 'work3',
+    id: 'work4',
   },
 ]
 
@@ -121,14 +130,7 @@ export const ACHIEVEMENTS: Achievement[] = [
       'Led workshops and mentored 100+ students at GDG on Git, GitHub, DevOps, and MERN stack development, Contributed to Open Source competitions like Hacktoberfest and Google Summer of Code',
     date: '2025',
     uid: 'achievement-3',
-  },
-  {
-    title: 'Dual Product Engineering Internships',
-    description:
-      'Successfully managing asynchronous roles at Superr.AI and Kwezy HQ, delivering scalable solutions across multiple projects',
-    date: '2025',
-    uid: 'achievement-4',
-  },
+  }
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
